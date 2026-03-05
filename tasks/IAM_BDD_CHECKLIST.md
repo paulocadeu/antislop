@@ -4,32 +4,32 @@ Este checklist mapeia o progresso da escrita dos cenários de comportamento (Ghe
 
 ## 1. Subdomínio: Autenticação (Auth)
 - [x] **AuthenticateUserUseCase**
-- [ ] **RefreshAccessTokenUseCase**
-- [ ] **LogoutUserUseCase**
-- [ ] **RequestPasswordResetUseCase**
-- [ ] **ResetPasswordUseCase**
-- [ ] **ChangePasswordUseCase**
+- [x] **RefreshAccessTokenUseCase**
+- [x] **LogoutUserUseCase**
+- [x] **RequestPasswordResetUseCase**
+- [x] **ResetPasswordUseCase**
+- [x] **ChangePasswordUseCase**
 
 ## 2. Subdomínio: Identidade (User Identity)
 - [x] **RegisterUserUseCase**
-- [ ] **VerifyUserEmailUseCase**
-- [ ] **UpdateUserProfileUseCase**
-- [ ] **UpdateUserPreferencesUseCase**
-- [ ] **ManageUserContactUseCase**
+- [x] **VerifyUserEmailUseCase**
+- [x] **UpdateUserProfileUseCase**
+- [x] **UpdateUserPreferencesUseCase**
+- [x] **ManageUserContactUseCase**
 
 ## 3. Subdomínio: Organizações (Multi-tenancy)
 - [x] **CreateOrganizationUseCase**
-- [ ] **UpdateOrganizationUseCase**
-- [ ] **ManageOrganizationContactUseCase**
-- [ ] **SwitchOrganizationContextUseCase**
+- [x] **UpdateOrganizationUseCase**
+- [x] **ManageOrganizationContactUseCase**
+- [x] **SwitchOrganizationContextUseCase**
 
 ## 4. Subdomínio: Controle de Acesso (RBAC)
 - [x] **InviteMemberToOrganizationUseCase**
-- [ ] **AcceptOrganizationInvitationUseCase**
-- [ ] **RemoveMemberFromOrganizationUseCase**
-- [ ] **CreateOrganizationRoleUseCase**
-- [ ] **AssignRoleToMemberUseCase**
-- [ ] **ListOrganizationMembersUseCase**
+- [x] **AcceptOrganizationInvitationUseCase**
+- [x] **RemoveMemberFromOrganizationUseCase**
+- [x] **CreateOrganizationRoleUseCase**
+- [x] **AssignRoleToMemberUseCase**
+- [x] **ListOrganizationMembersUseCase**
 
 ---
-*Criado em: 05/03/2026* - **EM PROGRESSO (4/21)**
+*Atualizado em: 05/03/2026* - **CONCLUÍDO (21/21)**
