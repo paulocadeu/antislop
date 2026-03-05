@@ -5,5 +5,25 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@modules/(.*)$": "<rootDir>/../src/modules/$1",
+    "^@shared/(.*)$": "<rootDir>/../src/shared/$1",
+    "^@domain/(.*)$": [
+      "<rootDir>/../src/modules/*/domain/$1",
+      "<rootDir>/../src/shared/domain/$1"
+    ],
+    "^@application/(.*)$": [
+      "<rootDir>/../src/modules/*/application/$1",
+      "<rootDir>/../src/shared/application/$1"
+    ],
+    "^@infrastructure/(.*)$": [
+      "<rootDir>/../src/modules/*/infrastructure/$1",
+      "<rootDir>/../src/shared/infrastructure/$1"
+    ],
+    "^@presentation/(.*)$": [
+      "<rootDir>/../src/modules/*/presentation/$1",
+      "<rootDir>/../src/shared/presentation/$1"
+    ]
   }
 }

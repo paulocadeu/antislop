@@ -3,22 +3,22 @@
 Este plano detalha as etapas para implementar a cobertura de testes no backend, garantindo que o diretório seja autossuficiente e siga a estratégia de Pirâmide de Testes.
 
 ## 1. Infraestrutura de Testes (Self-contained)
-- [ ] Configurar `backend/test/jest-e2e.json` com os mesmos path aliases do `package.json`.
-- [ ] Configurar suporte para execução de Gherkin (.feature) no Jest (ex: `jest-cucumber`).
-- [ ] Criar `DatabaseCleaner` em `backend/test/utils` para resetar o banco entre testes de integração.
-- [ ] Criar helper `TestAppInstance` para gerenciar o ciclo de vida do `TestingModule` do NestJS nos testes E2E.
+- [x] Configurar `backend/test/jest-e2e.json` com os mesmos path aliases do `package.json`.
+- [x] Configurar suporte para execução de Gherkin (.feature) no Jest (ex: `jest-cucumber`).
+- [x] Criar `DatabaseCleaner` em `backend/test/utils` para resetar o banco entre testes de integração.
+- [x] Criar helper `TestAppInstance` para gerenciar o ciclo de vida do `TestingModule` do NestJS nos testes E2E.
 
 ## 2. Utilitários e Factories (backend/test/utils)
-- [ ] Implementar `UserFactory` para geração de entidades e DTOs de teste.
+- [x] Implementar `UserFactory` para geração de entidades e DTOs de teste.
 - [ ] Implementar `OrganizationFactory` e `RoleFactory`.
-- [ ] Definir constantes de teste (payloads padrão, tokens expirados, credenciais inválidas).
+- [x] Definir constantes de teste (payloads padrão, tokens expirados, credenciais inválidas).
 
 ## 3. Testes Unitários (Core & Application)
 - [ ] **Entidades de Domínio:**
-    - [ ] `User.entity.spec.ts`: Validar regras de criação e estado.
+    - [x] `User.entity.spec.ts`: Validar regras de criação e estado.
     - [ ] `Base.entity.spec.ts`: Validar lógica de auditoria.
 - [ ] **Casos de Uso (Fase 1 - Identity):**
-    - [ ] `RegisterUserUseCase.spec.ts`: Sucesso, erro de e-mail duplicado, criação de preferências.
+    - [x] `RegisterUserUseCase.spec.ts`: Sucesso, erro de e-mail duplicado, criação de preferências.
     - [ ] `VerifyUserEmailUseCase.spec.ts`: Token válido vs expirado.
     - [ ] `UpdateUserProfileUseCase.spec.ts`: Validação de campos e persistência.
 
