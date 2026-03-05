@@ -64,7 +64,7 @@ describe('TypeOrmUserRepository (Integration)', () => {
   });
 
   it('should return null if user not found', async () => {
-    const foundUser = await repository.findById('non-existent-id');
+    const foundUser = await repository.findById('550e8400-e29b-41d4-a716-446655449999');
     expect(foundUser).toBeNull();
   });
 

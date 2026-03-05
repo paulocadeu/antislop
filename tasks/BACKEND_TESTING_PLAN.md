@@ -26,8 +26,8 @@ Este plano detalha as etapas para implementar a cobertura de testes no backend, 
 
 ## 4. Testes de Integração (Adapters & Infra)
 - [ ] **Persistência:**
-    - [🏗️] `TypeORMUserRepository.spec.ts`: Salvar/Buscar e validar o `UserMapper`.
-    - [ ] `TypeORMAccountRepository.spec.ts`: (Se aplicável).
+    - [✅] `TypeORMUserRepository.spec.ts`: Salvar/Buscar e validar o `UserMapper`.
+    - [🏗️] `TypeOrmUserPreferencesRepository.spec.ts`: Persistência de preferências.
 - [ ] **Serviços Externos:**
     - [ ] `BcryptHashService.spec.ts`: Verificar hash e comparação.
     - [ ] `JwtTokenAdapter.spec.ts`: Geração e decodificação de tokens.

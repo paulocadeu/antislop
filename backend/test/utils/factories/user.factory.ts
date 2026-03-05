@@ -1,10 +1,11 @@
 import { User, UserStatus } from '../../../src/modules/iam/domain/entities/user.entity';
 import { RegisterUserDto } from '../../../src/modules/iam/application/dtos/register-user.dto';
+import { TEST_CONSTANTS } from '../test-constants';
 
 export class UserFactory {
   static createEntity(overrides: Partial<User> = {}): User {
     return new User({
-      id: overrides.id || 'test-uuid',
+      id: overrides.id || TEST_CONSTANTS.MOCK_UUID,
       email: overrides.email || 'test@example.com',
       passwordHash: overrides.passwordHash || 'hashed-password',
       firstName: overrides.firstName || 'Test',
