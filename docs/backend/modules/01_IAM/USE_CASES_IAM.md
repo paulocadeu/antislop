@@ -11,45 +11,45 @@ Cada Use Case representa uma unidade de lógica de negócio na camada de **Aplic
 
 | Caso de Uso | Descrição | Entidades Relacionadas |
 | :--- | :--- | :--- |
-| **AuthenticateUserUseCase** | Valida e-mail/senha e emite par de tokens (Access/Refresh). | `users` |
-| **RefreshAccessTokenUseCase** | Rotaciona o Access Token usando um Refresh Token válido. | `users` |
-| **LogoutUserUseCase** | Invalida a sessão/refresh token do usuário. | `users` |
-| **RequestPasswordResetUseCase** | Gera token de recuperação e dispara e-mail. | `users` |
-| **ResetPasswordUseCase** | Altera a senha usando um token de recuperação válido. | `users` |
-| **ChangePasswordUseCase** | Altera a senha de um usuário logado (exige senha atual). | `users` |
+| [AuthenticateUserUseCase](./use-cases/auth/AuthenticateUserUseCase.md) | Valida e-mail/senha e emite par de tokens (Access/Refresh). | `users` |
+| [RefreshAccessTokenUseCase](./use-cases/auth/RefreshAccessTokenUseCase.md) | Rotaciona o Access Token usando um Refresh Token válido. | `users` |
+| [LogoutUserUseCase](./use-cases/auth/LogoutUserUseCase.md) | Invalida a sessão/refresh token do usuário. | `users` |
+| [RequestPasswordResetUseCase](./use-cases/auth/RequestPasswordResetUseCase.md) | Gera token de recuperação e dispara e-mail. | `users` |
+| [ResetPasswordUseCase](./use-cases/auth/ResetPasswordUseCase.md) | Altera a senha usando um token de recuperação válido. | `users` |
+| [ChangePasswordUseCase](./use-cases/auth/ChangePasswordUseCase.md) | Altera a senha de um usuário logado (exige senha atual). | `users` |
 
 ## 2. Subdomínio: Identidade e Perfil (User Identity)
 *Foco no ciclo de vida da conta do usuário.*
 
 | Caso de Uso | Descrição | Entidades Relacionadas |
 | :--- | :--- | :--- |
-| **RegisterUserUseCase** | Cria novo usuário (pendente), preferências e envia ativação. | `users`, `user_preferences` |
-| **VerifyUserEmailUseCase** | Ativa a conta do usuário via token de e-mail. | `users` |
-| **UpdateUserProfileUseCase** | Altera dados básicos (nome, avatar). | `users` |
-| **UpdateUserPreferencesUseCase** | Altera tema, idioma e notificações. | `user_preferences` |
-| **ManageUserContactUseCase** | Gerencia telefones e endereços vinculados ao usuário. | `phones`, `addresses` |
+| [RegisterUserUseCase](./use-cases/identity/RegisterUserUseCase.md) | Cria novo usuário (pendente), preferências e envia ativação. | `users`, `user_preferences` |
+| [VerifyUserEmailUseCase](./use-cases/identity/VerifyUserEmailUseCase.md) | Ativa a conta do usuário via token de e-mail. | `users` |
+| [UpdateUserProfileUseCase](./use-cases/identity/UpdateUserProfileUseCase.md) | Altera dados básicos (nome, avatar). | `users` |
+| [UpdateUserPreferencesUseCase](./use-cases/identity/UpdateUserPreferencesUseCase.md) | Altera tema, idioma e notificações. | `user_preferences` |
+| [ManageUserContactUseCase](./use-cases/identity/ManageUserContactUseCase.md) | Gerencia telefones e endereços vinculados ao usuário. | `phones`, `addresses` |
 
 ## 3. Subdomínio: Organizações (Multi-tenancy)
 *Foco no isolamento e estrutura de tenants.*
 
 | Caso de Uso | Descrição | Entidades Relacionadas |
 | :--- | :--- | :--- |
-| **CreateOrganizationUseCase** | Cria organização, vincula o Owner e define roles padrão. | `organizations`, `organization_members` |
-| **UpdateOrganizationUseCase** | Atualiza dados cadastrais da organização. | `organizations` |
-| **ManageOrganizationContactUseCase** | Gerencia contatos/endereços da organização. | `phones`, `addresses` |
-| **SwitchOrganizationContextUseCase** | Valida e emite token para um contexto de organização específico. | `organizations`, `organization_members` |
+| [CreateOrganizationUseCase](./use-cases/organizations/CreateOrganizationUseCase.md) | Cria organização, vincula o Owner e define roles padrão. | `organizations`, `organization_members` |
+| [UpdateOrganizationUseCase](./use-cases/organizations/UpdateOrganizationUseCase.md) | Atualiza dados cadastrais da organização. | `organizations` |
+| [ManageOrganizationContactUseCase](./use-cases/organizations/ManageOrganizationContactUseCase.md) | Gerencia contatos/endereços da organização. | `phones`, `addresses` |
+| [SwitchOrganizationContextUseCase](./use-cases/organizations/SwitchOrganizationContextUseCase.md) | Valida e emite token para um contexto de organização específico. | `organizations`, `organization_members` |
 
 ## 4. Subdomínio: Controle de Acesso e Membros (RBAC)
 *Foco na governança interna de cada organização.*
 
 | Caso de Uso | Descrição | Entidades Relacionadas |
 | :--- | :--- | :--- |
-| **InviteMemberToOrganizationUseCase** | Dispara convite para novo membro. | `organization_members` |
-| **AcceptOrganizationInvitationUseCase** | Processa a entrada do membro na organização. | `organization_members` |
-| **RemoveMemberFromOrganizationUseCase** | Revoga o acesso de um membro à organização. | `organization_members` |
-| **CreateOrganizationRoleUseCase** | Define novos papéis com permissões JSONB customizadas. | `organization_roles` |
-| **AssignRoleToMemberUseCase** | Altera o papel de um membro existente. | `organization_members`, `organization_roles` |
-| **ListOrganizationMembersUseCase** | Lista membros com paginação e filtros de status/papel. | `organization_members`, `users` |
+| [InviteMemberToOrganizationUseCase](./use-cases/rbac/InviteMemberToOrganizationUseCase.md) | Dispara convite para novo membro. | `organization_members` |
+| [AcceptOrganizationInvitationUseCase](./use-cases/rbac/AcceptOrganizationInvitationUseCase.md) | Processa a entrada do membro na organização. | `organization_members` |
+| [RemoveMemberFromOrganizationUseCase](./use-cases/rbac/RemoveMemberFromOrganizationUseCase.md) | Revoga o acesso de um membro à organização. | `organization_members` |
+| [CreateOrganizationRoleUseCase](./use-cases/rbac/CreateOrganizationRoleUseCase.md) | Define novos papéis com permissões JSONB customizadas. | `organization_roles` |
+| [AssignRoleToMemberUseCase](./use-cases/rbac/AssignRoleToMemberUseCase.md) | Altera o papel de um membro existente. | `organization_members`, `organization_roles` |
+| [ListOrganizationMembersUseCase](./use-cases/rbac/ListOrganizationMembersUseCase.md) | Lista membros com paginação e filtros de status/papel. | `organization_members`, `users` |
 
 ---
 
