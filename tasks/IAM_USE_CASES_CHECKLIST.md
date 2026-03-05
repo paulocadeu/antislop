@@ -6,30 +6,30 @@ Este checklist mapeia o progresso do detalhamento técnico de cada Caso de Uso d
 - [x] **AuthenticateUserUseCase**
 - [x] **RefreshAccessTokenUseCase**
 - [x] **LogoutUserUseCase**
-- [ ] **RequestPasswordResetUseCase**
-- [ ] **ResetPasswordUseCase**
-- [ ] **ChangePasswordUseCase**
+- [x] **RequestPasswordResetUseCase**
+- [x] **ResetPasswordUseCase**
+- [x] **ChangePasswordUseCase**
 
 ## 2. Subdomínio: Identidade (User Identity)
 - [x] **RegisterUserUseCase**
-- [ ] **VerifyUserEmailUseCase**
-- [ ] **UpdateUserProfileUseCase**
-- [ ] **UpdateUserPreferencesUseCase**
-- [ ] **ManageUserContactUseCase**
+- [x] **VerifyUserEmailUseCase**
+- [x] **UpdateUserProfileUseCase**
+- [x] **UpdateUserPreferencesUseCase**
+- [x] **ManageUserContactUseCase**
 
 ## 3. Subdomínio: Organizações (Multi-tenancy)
-- [ ] **CreateOrganizationUseCase**
-- [ ] **UpdateOrganizationUseCase**
-- [ ] **ManageOrganizationContactUseCase**
-- [ ] **SwitchOrganizationContextUseCase**
+- [x] **CreateOrganizationUseCase**
+- [x] **UpdateOrganizationUseCase**
+- [x] **ManageOrganizationContactUseCase**
+- [x] **SwitchOrganizationContextUseCase**
 
 ## 4. Subdomínio: Controle de Acesso (RBAC)
-- [ ] **InviteMemberToOrganizationUseCase**
-- [ ] **AcceptOrganizationInvitationUseCase**
-- [ ] **RemoveMemberFromOrganizationUseCase**
-- [ ] **CreateOrganizationRoleUseCase**
-- [ ] **AssignRoleToMemberUseCase**
-- [ ] **ListOrganizationMembersUseCase**
+- [x] **InviteMemberToOrganizationUseCase**
+- [x] **AcceptOrganizationInvitationUseCase**
+- [x] **RemoveMemberFromOrganizationUseCase**
+- [x] **CreateOrganizationRoleUseCase**
+- [x] **AssignRoleToMemberUseCase**
+- [x] **ListOrganizationMembersUseCase**
 
 ---
-*Atualizado em: 05/03/2026*
+*Atualizado em: 05/03/2026* - **CONCLUÍDO**
