@@ -1,5 +1,6 @@
 import { User } from '../../../../domain/entities/user.entity';
 import { UserOrmEntity } from '../entities/user.orm-entity';
+import { UserPreferencesMapper } from './user-preferences.mapper';
 
 export class UserMapper {
   static toDomain(orm: UserOrmEntity): User {
@@ -14,6 +15,7 @@ export class UserMapper {
       avatar: orm.avatar,
       activationToken: orm.activationToken,
       activationTokenExpiresAt: orm.activationTokenExpiresAt,
+      preferences: orm.preferences ? UserPreferencesMapper.toDomain(orm.preferences) : undefined,
       createdAt: orm.createdAt,
       updatedAt: orm.updatedAt,
     });
@@ -32,6 +34,9 @@ export class UserMapper {
     if (domain.activationToken) orm.activationToken = domain.activationToken;
     if (domain.activationTokenExpiresAt)
       orm.activationTokenExpiresAt = domain.activationTokenExpiresAt;
+    if (domain.preferences) {
+      orm.preferences = UserPreferencesMapper.toPersistence(domain.preferences);
+    }
     return orm;
   }
 }

@@ -1,9 +1,14 @@
+import { Inject, Injectable } from '@nestjs/common';
 import { IUserPreferencesRepository } from '../../domain/repositories/iuser-preferences.repository';
 import { UserPreferences } from '../../domain/entities/user-preferences.entity';
 import { UpdateUserPreferencesDto } from '../dtos/update-user-preferences.dto';
 
+@Injectable()
 export class UpdateUserPreferencesUseCase {
-  constructor(private readonly userPreferencesRepository: IUserPreferencesRepository) {}
+  constructor(
+    @Inject('IUserPreferencesRepository')
+    private readonly userPreferencesRepository: IUserPreferencesRepository,
+  ) {}
 
   async execute(userId: string, dto: UpdateUserPreferencesDto): Promise<void> {
     let preferences = await this.userPreferencesRepository.findByUserId(userId);

@@ -1,6 +1,7 @@
 import { BaseEntity } from '@shared/domain/base.entity';
-import { Column, Entity, Index } from 'typeorm';
+import { Column, Entity, Index, OneToOne } from 'typeorm';
 import { UserStatus } from '../../../../domain/entities/user.entity';
+import { UserPreferencesOrmEntity } from './user-preferences.orm-entity';
 
 @Entity('users')
 export class UserOrmEntity extends BaseEntity {
@@ -37,4 +38,9 @@ export class UserOrmEntity extends BaseEntity {
 
   @Column({ name: 'activation_token_expires_at', type: 'timestamptz', nullable: true })
   activationTokenExpiresAt: Date;
+
+  @OneToOne(() => UserPreferencesOrmEntity, (preferences) => preferences.user, {
+    cascade: true,
+  })
+  preferences: UserPreferencesOrmEntity;
 }

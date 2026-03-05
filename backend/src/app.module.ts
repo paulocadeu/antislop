@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
+import { SharedModule } from './shared/infrastructure/nest/shared.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
         synchronize: configService.get<boolean>('DB_SYNC'), // Apenas em dev!
       }),
     }),
+    SharedModule,
     IamModule,
   ],
   controllers: [],

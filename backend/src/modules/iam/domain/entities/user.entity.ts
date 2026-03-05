@@ -1,3 +1,6 @@
+import { UserPreferences } from './user-preferences.entity';
+import { VerificationToken } from '../value-objects/verification-token.vo';
+
 export enum UserStatus {
   PENDING_VERIFICATION = 'pending_verification',
   ACTIVE = 'active',
@@ -15,6 +18,7 @@ export class User {
   avatar?: string;
   activationToken?: string;
   activationTokenExpiresAt?: Date;
+  preferences?: UserPreferences;
   createdAt?: Date;
   updatedAt?: Date;
 
@@ -23,6 +27,17 @@ export class User {
     if (!this.status) {
       this.status = UserStatus.PENDING_VERIFICATION;
     }
+  }
+
+  generateActivationToken(): void {
+    const token = VerificationToken.generate();
+    this.activationToken = token.getValue();
+    this.activationTokenExpiresAt = token.getExpiresAt();
+  }
+
+  isTokenExpired(): boolean {
+    if (!this.activationTokenExpiresAt) return true;
+    return new Date() > this.activationTokenExpiresAt;
   }
 
   get fullName(): string {
