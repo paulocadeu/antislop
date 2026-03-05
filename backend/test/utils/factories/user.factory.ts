@@ -9,7 +9,9 @@ export class UserFactory {
       passwordHash: overrides.passwordHash || 'hashed-password',
       firstName: overrides.firstName || 'Test',
       lastName: overrides.lastName || 'User',
-      status: overrides.status || UserStatus.ACTIVE,
+      status: overrides.status || UserStatus.PENDING_VERIFICATION,
+      activationToken: overrides.activationToken || 'valid-token',
+      activationTokenExpiresAt: overrides.activationTokenExpiresAt || new Date(Date.now() + 3600000), // 1 hour from now
       createdAt: overrides.createdAt || new Date(),
       updatedAt: overrides.updatedAt || new Date(),
     });

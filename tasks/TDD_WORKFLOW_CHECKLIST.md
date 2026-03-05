@@ -51,7 +51,7 @@ Acompanhamento do progresso de implementação guiada por testes:
 | Caso de Uso | Unit (Entity) | Unit (Use Case) | Integration | BDD (E2E) |
 | :--- | :---: | :---: | :---: | :---: |
 | RegisterUser | ✅ | ✅ | 🏗️ | 🏗️ |
-| VerifyUserEmail | ⬜ | ⬜ | ⬜ | ⬜ |
+| VerifyUserEmail | ✅ | ✅ | ⬜ | ⬜ |
 | UpdateUserProfile | ⬜ | ⬜ | ⬜ | ⬜ |
 | UpdateUserPreferences | ⬜ | ⬜ | ⬜ | ⬜ |
 | ManageUserContact | ⬜ | ⬜ | ⬜ | ⬜ |

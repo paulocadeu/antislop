@@ -13,6 +13,8 @@ export class User {
   taxId?: string;
   status: UserStatus;
   avatar?: string;
+  activationToken?: string;
+  activationTokenExpiresAt?: Date;
   createdAt?: Date;
   updatedAt?: Date;
 
