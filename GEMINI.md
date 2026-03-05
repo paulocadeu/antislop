@@ -1,7 +1,7 @@
 # ANTISLOP - Project Context
 
 ## Project Overview
-ANTISLOP is a web application focusing on a clean and robust architecture. The backend is built with **NestJS** and **TypeScript**, following **Hexagonal Architecture (Ports and Adapters)** principles. It uses **PostgreSQL** as the primary database with **TypeORM** for object-relational mapping.
+ANTISLOP is a multi-tenant SaaS application focusing on a clean and robust architecture. The backend is built with **NestJS** and **TypeScript**, following **Hexagonal Architecture (Ports and Adapters)** principles. It uses **PostgreSQL** (v18) as the primary database with **TypeORM** for object-relational mapping.
 
 ## Tech Stack
 - **Language:** TypeScript
@@ -10,22 +10,32 @@ ANTISLOP is a web application focusing on a clean and robust architecture. The b
 - **ORM:** TypeORM
 - **Runtime:** Node.js (Primary)
 - **API Documentation:** Swagger (`@nestjs/swagger`)
-- **Authentication:** Passport.js (`@nestjs/passport`)
-- **Validation:** `class-validator`, `class-transformer`
-- **Testing:** Jest (Unit and Integration)
+- **Authentication:** Passport.js with JWT and Refresh Token Rotation.
+- **Validation:** `class-validator`, `class-transformer`.
+- **Testing:** Jest (Unit, Integration, and E2E) + Gherkin BDD.
 - **Mail:** Maildev for local development, Nodemailer for production.
+
+## Project Status (March 2026)
+- [x] **Architecture Blueprint:** Layers and responsibilities defined.
+- [x] **Database Design:** IAM module ERD completed (Polymorphic contacts, JSONB RBAC).
+- [x] **Functional Spec:** 21 IAM Use Cases detailed technically.
+- [x] **Behavioral Spec:** 21 BDD (Gherkin) scenarios for IAM completed.
+- [ ] **Technical Setup:** NestJS project initialization (Next Step).
+- [ ] **Reference Implementation:** `RegisterUserUseCase` (Planned).
 
 ## Architecture
 The project strictly adheres to **Hexagonal Architecture**:
-- **Core:** Contains business logic, entities, and use cases. It should remain agnostic of external frameworks (with minor concessions for NestJS decorators).
-- **Adapters:** Implementations for external interfaces (persistence, HTTP controllers, external APIs).
+- **Core (Domain/Application):** Contains business logic, entities, and use cases. It remains agnostic of external frameworks (with minor concessions for NestJS decorators).
+- **Adapters (Infrastructure/Presentation):** Implementations for external interfaces (persistence, HTTP controllers, external APIs).
 - **Ports:** Interfaces that define how the core interacts with the outside world.
+- **Detailed Structure:** See `docs/backend/architecture/folder_structure.md`.
 
 ## Project Structure
 - `backend/`: NestJS application source code and Docker configuration.
 - `frontend/`: (Currently empty) Placeholder for the frontend application.
 - `docs/`: Technical documentation, including Architectural Decisions (DET.md) and module-specific ERDs.
 - `infra/`: Infrastructure as Code (IaC) and local development orchestration (`docker-compose.yml`).
+- `tasks/`: Checklists and progress tracking.
 
 ## Development Workflow
 
@@ -51,11 +61,20 @@ The `docker-compose.yml` provides:
 - `maildev`: Local SMTP server and Web UI for email testing (Port 1080).
 
 ### Key Modules
-1.  **Identity and Access Management (IAM):** Handles users, organizations, roles (RBAC), and authentication.
-    - Documented in `docs/backend/modules/01_IAM/ERD_IAM.md`.
+1.  **Identity and Access Management (IAM):** Handles users, organizations (tenants), roles (RBAC), and authentication.
+    - **Specs:** `docs/backend/modules/01_IAM/README.md`.
+    - **ERD:** `docs/backend/modules/01_IAM/ERD_IAM.md`.
+    - **BDD:** `docs/backend/modules/01_IAM/bdd/`.
+
+## Shared Logic Memories
+- **Invitations:** The invitation creation endpoint is centralized at `POST /v1/invitations` in the Shared module, using `CreateInvitationUseCase`, to keep the invitation system agnostic.
+- **Isolation:** Domain entities MUST be isolated from TypeORM entities via Mappers.
+- **RBAC:** Organization roles use `JSONB` for flexible permission sets.
 
 ## Development Conventions
 - Follow **Clean Code** and **SOLID** principles.
-- Maintain isolation of the **Core** layer.
+- Maintain strict isolation of the **Core** layer.
 - Use **Mappers** to translate between persistence entities and domain entities.
+- **Validation:** Use `class-validator` in DTOs and business rules in Domain.
+- **BDD:** Use Gherkin scenarios as the source of truth for behavior and acceptance tests.
 - Ensure all new features are accompanied by tests.
