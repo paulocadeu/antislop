@@ -76,6 +76,14 @@
       "**/*.(t|j)s"
     ],
     "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "^@modules/(.*)$": "<rootDir>/modules/$1",
+      "^@shared/(.*)$": "<rootDir>/shared/$1",
+      "^@domain/(.*)$": ["<rootDir>/modules/*/domain/$1", "<rootDir>/shared/domain/$1"],
+      "^@application/(.*)$": ["<rootDir>/modules/*/application/$1", "<rootDir>/shared/application/$1"],
+      "^@infrastructure/(.*)$": ["<rootDir>/modules/*/infrastructure/$1", "<rootDir>/shared/infrastructure/$1"],
+      "^@presentation/(.*)$": ["<rootDir>/modules/*/presentation/$1", "<rootDir>/shared/presentation/$1"]
+    }
   }
 }

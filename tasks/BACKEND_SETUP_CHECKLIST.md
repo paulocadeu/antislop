@@ -27,9 +27,9 @@ Este checklist mapeia as tarefas necessárias para inicializar o projeto backend
 - [x] Configurar `ValidationPipe` global para uso do `class-validator`.
 
 ## 5. Primeiro Caso de Uso (Referência)
-- [ ] Implementar `RegisterUserUseCase` (Core).
-- [ ] Implementar `UserMapper` e `UserPersistence` (Infra).
-- [ ] Implementar `AuthController` e endpoint de registro (Presentation).
+- [x] Implementar `RegisterUserUseCase` (Core).
+- [x] Implementar `UserMapper` e `UserPersistence` (Infra).
+- [x] Implementar `AuthController` e endpoint de registro (Presentation).
 - [ ] Validar com primeiro teste de integração (BDD/Jest).
 
 ---

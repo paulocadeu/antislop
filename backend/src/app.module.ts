@@ -1,8 +1,6 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
 
 @Module({
@@ -26,7 +24,7 @@ import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
     }),
     IamModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

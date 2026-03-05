@@ -36,12 +36,15 @@ async function bootstrap() {
   // Global Interceptors
   app.useGlobalInterceptors(new StandardizedResponseInterceptor());
 
+  // Redirect root to /docs
+  app.getHttpAdapter().get('/', (req, res) => {
+    res.redirect('/docs');
+  });
+
   // CORS Configuration
   app.enableCors();
 
   const port = process.env.PORT || 3000;
   await app.listen(port);
-  console.log(`Application is running on: http://localhost:${port}/v1`);
-  console.log(`Documentation available on: http://localhost:${port}/docs`);
 }
 bootstrap();
