@@ -6,8 +6,8 @@ Este checklist mapeia as tarefas necessárias para inicializar o projeto backend
 - [x] Inicializar projeto NestJS em `backend/` (`npx nest new`).
 - [x] Configurar `.gitignore` local do backend.
 - [x] Configurar `tsconfig.json` com path aliases (`@domain/*`, `@application/*`, etc.).
-- [ ] Configurar ESLint e Prettier seguindo os padrões do projeto.
-- [ ] Configurar Husky e lint-staged para garantir qualidade nos commits.
+- [x] Configurar ESLint e Prettier seguindo os padrões do projeto.
+- [x] Configurar Husky e lint-staged para garantir qualidade nos commits.
 
 ## 2. Estrutura de Pastas (Hexagonal)
 - [x] Criar diretório `src/shared/` para lógica global.
