@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
-import { IUserPreferencesRepository } from '../../domain/repositories/iuser-preferences.repository';
+import type { IUserPreferencesRepository } from '../../domain/repositories/iuser-preferences.repository';
 import { UserPreferences } from '../../domain/entities/user-preferences.entity';
 import { UpdateUserPreferencesDto } from '../dtos/update-user-preferences.dto';
 

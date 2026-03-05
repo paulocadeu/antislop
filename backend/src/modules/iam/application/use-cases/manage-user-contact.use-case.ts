@@ -1,5 +1,5 @@
 import { Inject, Injectable, BadRequestException } from '@nestjs/common';
-import { IContactRepository } from '../../domain/repositories/icontact.repository';
+import type { IContactRepository } from '../../domain/repositories/icontact.repository';
 import { ManageUserContactDto, ContactType, ContactAction } from '../dtos/manage-user-contact.dto';
 import { Phone } from '@shared/domain/phone.entity';
 import { Address } from '@shared/domain/address.entity';

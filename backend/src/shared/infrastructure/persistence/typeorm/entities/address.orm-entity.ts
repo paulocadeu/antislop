@@ -9,8 +9,8 @@ export class AddressOrmEntity extends BaseEntity {
   @Column()
   number: string;
 
-  @Column({ nullable: true })
-  complement: string;
+  @Column({ type: 'varchar', nullable: true })
+  complement: string | null;
 
   @Column()
   neighborhood: string;

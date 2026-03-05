@@ -1,5 +1,5 @@
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { IUserRepository } from '../../domain/repositories/iuser.repository';
+import type { IUserRepository } from '../../domain/repositories/iuser.repository';
 import { UpdateUserProfileDto } from '../dtos/update-user-profile.dto';
 
 @Injectable()

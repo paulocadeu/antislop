@@ -7,7 +7,7 @@ export class AddressMapper {
       id: orm.id,
       street: orm.street,
       number: orm.number,
-      complement: orm.complement,
+      complement: orm.complement ?? undefined,
       neighborhood: orm.neighborhood,
       city: orm.city,
       stateProvinceRegion: orm.stateProvinceRegion,
@@ -27,7 +27,7 @@ export class AddressMapper {
     if (domain.id) orm.id = domain.id;
     orm.street = domain.street;
     orm.number = domain.number;
-    orm.complement = domain.complement;
+    orm.complement = domain.complement ?? null;
     orm.neighborhood = domain.neighborhood;
     orm.city = domain.city;
     orm.stateProvinceRegion = domain.stateProvinceRegion;
