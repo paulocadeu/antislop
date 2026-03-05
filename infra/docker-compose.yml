@@ -1,0 +1,67 @@
+# command up: docker compose -f docker-compose-dev.yml up --build --remove-orphans
+# command down: docker compose -f docker-compose-dev.yml down -v
+# Use this docker-compose file for development environment
+
+services:
+  api:
+    build:
+      context: ./../backend
+      dockerfile: Dockerfile.dev
+    container_name: antislop.backend
+    volumes:
+      - ./../backend:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRES_IN=${JWT_EXPIRES_IN}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_DATABASE=${DB_NAME}
+      - DB_SSL=${DB_SSL}
+      - EMAIL_SUPPORT=${EMAIL_SUPPORT}
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_PORT=${EMAIL_PORT}
+      - EMAIL_SECURE=${EMAIL_SECURE}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASS=${EMAIL_PASS}
+      - EMAIL_FROM=${EMAIL_FROM}
+    #command:  ["sh", "/app/entrypoint_api.sh"]
+    command:  ["sh","-c", "sleep infinity"]
+
+    depends_on:
+      - database
+    restart: on-failure
+    mem_limit: 1g
+
+  database:
+    image: postgres:18
+    container_name: antislop.postgres
+    environment:
+      POSTGRES_USER: ${DB_USERNAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432"
+    volumes:
+      - antislop_pgdata:/var/lib/postgresql
+    mem_limit: 128m
+
+  maildev:
+    image: maildev/maildev
+    container_name: antislop.maildev
+    ports:
+      - "1080:1080" # Web UI
+      - "1025:1025" # SMTP
+    restart: always
+
+volumes:
+  antislop_pgdata:
+
+networks:
+  antislop:
+    driver: bridge
