@@ -30,4 +30,11 @@ export class UserOrmEntity extends BaseEntity {
 
   @Column({ nullable: true })
   avatar: string;
+
+  @Column({ name: 'activation_token', nullable: true })
+  @Index({ unique: true })
+  activationToken: string;
+
+  @Column({ name: 'activation_token_expires_at', type: 'timestamptz', nullable: true })
+  activationTokenExpiresAt: Date;
 }
