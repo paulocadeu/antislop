@@ -52,9 +52,9 @@ Acompanhamento do progresso de implementação guiada por testes:
 | :--- | :---: | :---: | :---: | :---: |
 | RegisterUser | ✅ | ✅ | 🏗️ | 🏗️ |
 | VerifyUserEmail | ✅ | ✅ | ⬜ | ⬜ |
-| UpdateUserProfile | ⬜ | ⬜ | ⬜ | ⬜ |
-| UpdateUserPreferences | ⬜ | ⬜ | ⬜ | ⬜ |
-| ManageUserContact | ⬜ | ⬜ | ⬜ | ⬜ |
+| UpdateUserProfile | ✅ | ✅ | ⬜ | ⬜ |
+| UpdateUserPreferences | ✅ | ✅ | ⬜ | ⬜ |
+| ManageUserContact | ✅ | ✅ | ⬜ | ⬜ |
 
 ### Subdomínio: Autenticação (Fase 2)
 | Caso de Uso | Unit (Entity) | Unit (Use Case) | Integration | BDD (E2E) |
