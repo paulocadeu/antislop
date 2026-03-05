@@ -3,6 +3,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { AppService } from './app.service';
         synchronize: configService.get<boolean>('DB_SYNC'), // Apenas em dev!
       }),
     }),
+    IamModule,
   ],
   controllers: [AppController],
   providers: [AppService],
