@@ -9,7 +9,6 @@ import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '../infra/.env',
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
@@ -20,7 +19,7 @@ import { IamModule } from './modules/iam/infrastructure/nest/iam.module';
         port: configService.get<number>('DB_PORT'),
         username: configService.get<string>('DB_USERNAME'),
         password: configService.get<string>('DB_PASSWORD'),
-        database: configService.get<string>('DB_NAME'),
+        database: configService.get<string>('DB_DATABASE'),
         autoLoadEntities: true,
         synchronize: configService.get<boolean>('DB_SYNC'), // Apenas em dev!
       }),
