@@ -50,7 +50,7 @@ Acompanhamento do progresso de implementação guiada por testes:
 ### Subdomínio: Identidade (Fase 1)
 | Caso de Uso | Unit (Entity) | Unit (Use Case) | Integration | BDD (E2E) |
 | :--- | :---: | :---: | :---: | :---: |
-| RegisterUser | ✅ | ✅ | 🏗️ | 🏗️ |
+| RegisterUser | ✅ | ✅ | ✅ | ✅ |
 | VerifyUserEmail | ✅ | ✅ | ⬜ | ⬜ |
 | UpdateUserProfile | ✅ | ✅ | ⬜ | ⬜ |
 | UpdateUserPreferences | ✅ | ✅ | ⬜ | ⬜ |

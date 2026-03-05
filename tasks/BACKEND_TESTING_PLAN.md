@@ -34,8 +34,8 @@ Este plano detalha as etapas para implementar a cobertura de testes no backend, 
     - [ ] `NodemailerAdapter.spec.ts`: Mocking do Maildev.
 
 ## 5. Testes E2E / BDD (Apresentação)
-- [ ] Implementar Step Definitions para `RegisterUserUseCase.feature`.
-- [ ] Implementar Step Definitions para `AuthenticateUserUseCase.feature`.
+- [✅] Implementar Step Definitions para `RegisterUserUseCase.feature`.
+- [🏗️] Implementar Step Definitions para `AuthenticateUserUseCase.feature`.
 - [ ] Validar Isolamento de Tenant (Multi-tenancy) nos testes de Organização.
 - [ ] Validar Interceptores e Filtros Globais (Responses padronizadas).
 
