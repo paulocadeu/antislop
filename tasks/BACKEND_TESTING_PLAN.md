@@ -19,12 +19,14 @@ Este plano detalha as etapas para implementar a cobertura de testes no backend, 
     - [ ] `Base.entity.spec.ts`: Validar lógica de auditoria.
 - [ ] **Casos de Uso (Fase 1 - Identity):**
     - [x] `RegisterUserUseCase.spec.ts`: Sucesso, erro de e-mail duplicado, criação de preferências.
-    - [ ] `VerifyUserEmailUseCase.spec.ts`: Token válido vs expirado.
-    - [ ] `UpdateUserProfileUseCase.spec.ts`: Validação de campos e persistência.
+    - [x] `VerifyUserEmailUseCase.spec.ts`: Token válido vs expirado.
+    - [x] `UpdateUserProfileUseCase.spec.ts`: Validação de campos e persistência.
+    - [x] `UpdateUserPreferencesUseCase.spec.ts`: Upsert de preferências.
+    - [x] `ManageUserContactUseCase.spec.ts`: Gestão polimórfica de contatos.
 
 ## 4. Testes de Integração (Adapters & Infra)
 - [ ] **Persistência:**
-    - [ ] `TypeORMUserRepository.spec.ts`: Salvar/Buscar e validar o `UserMapper`.
+    - [🏗️] `TypeORMUserRepository.spec.ts`: Salvar/Buscar e validar o `UserMapper`.
     - [ ] `TypeORMAccountRepository.spec.ts`: (Se aplicável).
 - [ ] **Serviços Externos:**
     - [ ] `BcryptHashService.spec.ts`: Verificar hash e comparação.

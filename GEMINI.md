@@ -14,17 +14,33 @@ ANTISLOP is a multi-tenant SaaS application focusing on a clean and robust archi
 - **Validation:** `class-validator`, `class-transformer`.
 - **Testing:** Jest (Unit, Integration, and E2E) + Gherkin BDD.
 - **Mail:** Maildev for local development, Nodemailer for production.
-
 ## Project Status (March 2026)
 - [x] **Architecture Blueprint:** Layers and responsibilities defined.
 - [x] **Database Design:** IAM module ERD completed (Polymorphic contacts, JSONB RBAC).
 - [x] **Functional Spec:** 21 IAM Use Cases detailed technically.
 - [x] **Behavioral Spec:** 21 BDD (Gherkin) scenarios for IAM completed.
-- [ ] **Technical Setup:** NestJS project initialization (Next Step).
-- [ ] **Reference Implementation:** `RegisterUserUseCase` (Planned).
+- [x] **Technical Setup:** NestJS project initialization, Husky, Jest-Cucumber.
+- [🏗️] **Reference Implementation:** IAM Identity Subdomain (Unit Tests complete).
 
 ## Architecture
-The project strictly adheres to **Hexagonal Architecture**:
+...
+## Testing Strategy (Outside-In TDD/BDD)
+
+Adotamos um fluxo rigoroso de desenvolvimento guiado por testes para garantir integridade arquitetural:
+
+1.  **Passo 1: BDD (Red)** - Definir comportamento em Gherkin (`.feature`) e criar teste E2E falhando.
+2.  **Passo 2: Domínio (Red-Green)** - Implementar regras de negócio na `Entity` ou `Value Object` via TDD.
+3.  **Passo 3: Aplicação (Red-Green)** - Implementar `Use Case` com mocks para os `Ports`.
+4.  **Passo 4: Infraestrutura (Red-Green)** - Implementar `Adapters` (TypeORM, Services) com testes de integração.
+5.  **Passo 5: BDD (Green)** - Finalizar `Presentation` (Controller) e validar o fluxo completo.
+
+### Infraestrutura de Teste
+- **DatabaseCleaner:** Limpeza automática do banco entre testes de integração.
+- **TestAppInstance:** Singleton para gerenciar o NestJS em testes E2E.
+- **Factories:** Padrão *Object Mother* (ex: `UserFactory`) para geração de dados de teste.
+
+## Project Structure
+
 - **Core (Domain/Application):** Contains business logic, entities, and use cases. It remains agnostic of external frameworks (with minor concessions for NestJS decorators).
 - **Adapters (Infrastructure/Presentation):** Implementations for external interfaces (persistence, HTTP controllers, external APIs).
 - **Ports:** Interfaces that define how the core interacts with the outside world.

@@ -11,6 +11,7 @@ import { AuthController } from '../../presentation/controllers/auth.controller';
   controllers: [AuthController],
   providers: [
     RegisterUserUseCase,
+    TypeOrmUserRepository,
     {
       provide: 'IUserRepository',
       useClass: TypeOrmUserRepository,

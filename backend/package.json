@@ -81,7 +81,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": ".",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
@@ -89,26 +89,26 @@
     "collectCoverageFrom": [
       "**/*.(t|j)s"
     ],
-    "coverageDirectory": "../coverage",
+    "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "^@modules/(.*)$": "<rootDir>/modules/$1",
-      "^@shared/(.*)$": "<rootDir>/shared/$1",
+      "^@modules/(.*)$": "<rootDir>/src/modules/$1",
+      "^@shared/(.*)$": "<rootDir>/src/shared/$1",
       "^@domain/(.*)$": [
-        "<rootDir>/modules/*/domain/$1",
-        "<rootDir>/shared/domain/$1"
+        "<rootDir>/src/modules/*/domain/$1",
+        "<rootDir>/src/shared/domain/$1"
       ],
       "^@application/(.*)$": [
-        "<rootDir>/modules/*/application/$1",
-        "<rootDir>/shared/application/$1"
+        "<rootDir>/src/modules/*/application/$1",
+        "<rootDir>/src/shared/application/$1"
       ],
       "^@infrastructure/(.*)$": [
-        "<rootDir>/modules/*/infrastructure/$1",
-        "<rootDir>/shared/infrastructure/$1"
+        "<rootDir>/src/modules/*/infrastructure/$1",
+        "<rootDir>/src/shared/infrastructure/$1"
       ],
       "^@presentation/(.*)$": [
-        "<rootDir>/modules/*/presentation/$1",
-        "<rootDir>/shared/presentation/$1"
+        "<rootDir>/src/modules/*/presentation/$1",
+        "<rootDir>/src/shared/presentation/$1"
       ]
     }
   }
