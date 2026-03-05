@@ -30,7 +30,7 @@ Este checklist mapeia as tarefas necessárias para inicializar o projeto backend
 - [x] Implementar `RegisterUserUseCase` (Core).
 - [x] Implementar `UserMapper` e `UserPersistence` (Infra).
 - [x] Implementar `AuthController` e endpoint de registro (Presentation).
-- [ ] Validar com primeiro teste de integração (BDD/Jest).
+- [ ] Validar com testes automatizados (Pendente para o próximo sprint).
 
 ---
-*Criado em: 05/03/2026* - **PENDENTE**
+*Atualizado em: 05/03/2026* - **CONCLUÍDO (Setup Base)**
